@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Productos - La Pizza Feliz</title>
+    <link rel="stylesheet" href="style.css"> <style>
+        /* Estilos específicos para el gestor de productos */
+        .manager-container {
+            width: 800px;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-top: 50px;
+        }
+        .manager-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .product-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            align-items: end;
+        }
+        .product-form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .product-form input[type="text"],
+        .product-form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .product-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            height: fit-content; /* Ajusta la altura al contenido */
+        }
+        .product-list-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .product-list-table th,
+        .product-list-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .product-list-table th {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .product-list-table .remove-product {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .code-output {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e9e9e9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .code-output p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .code-output textarea {
+            width: 100%;
+            height: 250px;
+            border: 1px solid #bbb;
+            padding: 15px;
+            font-family: monospace;
+            white-space: pre;
+            overflow-wrap: normal;
+            overflow-x: auto;
+            resize: vertical;
+        }
+        .code-output button {
+            background-color: #6c757d; /* Gris para copiar */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="manager-container">
+        <h1>Gestor de Productos de "La Pizza Feliz"</h1>
+
+        <div class="product-form">
+            <div>
+                <label for="product-id">ID del Producto:</label>
+                <input type="text" id="product-id" placeholder="ej. prod009" required>
+            </div>
+            <div>
+                <label for="product-name">Nombre del Producto:</label>
+                <input type="text" id="product-name" placeholder="ej. Pizza Hawaiana" required>
+            </div>
+            <div>
+                <label for="product-price">Precio (Gs.):</label>
+                <input type="number" id="product-price" step="0.01" min="0" placeholder="ej. 70000.00" required>
+            </div>
+            <button id="add-new-product">Agregar Producto</button>
+        </div>
+
+        <section class="current-products">
+            <h2>Productos Actuales</h2>
+            <table class="product-list-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio (Gs.)</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list-body">
+                    </tbody>
+            </table>
+        </section>
+
+        <div class="code-output">
+            <p>Paso final: Copia este código y pégalo en tu archivo `products.js`:</p>
+            <textarea id="products-code-output" readonly></textarea>
+            <button id="copy-code">Copiar Código</button>
+            <p>**(¡Guarda el archivo `products.js` después de pegar el nuevo código!)**</p>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px;">
+            <a href="index.html">Volver a la Factura</a>
+        </p>
+    </div>
+
+    <script src="products.js"></script> <script src="product-manager.js"></script>
+</body>
+</html>

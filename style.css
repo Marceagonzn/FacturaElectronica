@@ -95,7 +95,8 @@ section h3 {
 }
 
 .item-details input[type="number"],
-.item-details input[type="text"] {
+.item-details input[type="text"],
+.item-details select { /* Añadimos select aquí */
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -211,9 +212,10 @@ footer {
 }
 
 .company-logo {
-    max-width: 150px; /* Tamaño máximo del logo */
+    max-width: 100px; /* ¡Nuevo tamaño para el logo! Puedes probar 80px, 120px, etc. */
     height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: 10px; /* Espacio entre el logo y el nombre de la empresa */
+    margin-top: 10px; /* Espacio encima del logo para separarlo de la fecha */
+    margin-bottom: 0; /* Asegura que no haya un margen inferior adicional */
 }
 /* Estilos para impresión (asegúrate de que el contenedor del botón se oculte) */
 @media print {
@@ -236,7 +238,8 @@ footer {
     }
     /* Asegúrate de que el logo se muestre correctamente en la impresión */
     .company-logo {
-        max-width: 150px; /* Ajusta si necesitas un tamaño diferente para imprimir */
+        max-width: 100px; /* Asegura que el tamaño también se aplique al imprimir */
+        margin-top: 5px;
     }
 }
 /* Nuevo estilo para el contenedor de botones */
@@ -287,5 +290,16 @@ footer {
     /* ... (Mantén el resto de esta sección igual) ... */
     #add-item, .item-details button, .print-button-container {
         display: none; /* Oculta ambos botones en la impresión */
+    }
+}
+@media print {
+    /* ... (Mantén el resto de esta sección igual) ... */
+    input[type="text"], input[type="number"], select { /* Aseguramos que el select también no tenga borde al imprimir */
+        border: none;
+        padding: 0;
+        -webkit-appearance: none; /* Elimina estilos por defecto del select en Chrome/Safari */
+        -moz-appearance: none;    /* Elimina estilos por defecto del select en Firefox */
+        appearance: none;         /* Elimina estilos por defecto del select */
+        background: transparent;  /* Hace el fondo transparente al imprimir */
     }
 }
