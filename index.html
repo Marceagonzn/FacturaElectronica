@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura de "La Pizza Feliz"</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="invoice-container">
+        <header>
+            <h1>FACTURA DE PEDIDO</h1>
+            <div class="invoice-info">
+                <div>
+                    <p><strong>Nro. Factura:</strong> <span id="invoice-number">PIZZA-001</span></p>
+                    <p><strong>Fecha:</strong> <span id="invoice-date"></span></p>
+                    <img src="logo-pizza.png" alt="La Pizza Feliz Logo" class="company-logo">
+                </div>
+                <div class="company-info">
+                    <h2>La Pizza Feliz</h2>
+                    <p>RUC: 80098765-4</p>
+                    <p>Dirección: Av. Italia 456, Ciudad del Este</p>
+                    <p>Teléfono: (0981) 789-012</p>
+                    <p>Email: contacto@lapizzafeliz.com</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="client-info">
+            <h3>Información del Cliente</h3>
+            <p><strong>Nombre/Razón Social:</strong> <input type="text" id="client-name" value="Juan Pérez"></p>
+            <p><strong>RUC/CI:</strong> <input type="text" id="client-id" value="4567890-1"></p>
+            <p><strong>Dirección:</strong> <input type="text" id="client-address" value="Calle del Horno 101, Barrio Centro"></p>
+        </section>
+
+        <section class="item-details">
+            <h3>Detalles del Pedido</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Subtotal</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="invoice-items">
+                    </tbody>
+            </table>
+            <button id="add-item">Agregar Pizza/Bebida</button>
+        </section>
+
+        <section class="invoice-summary">
+            <div class="summary-details">
+                <p><strong>Subtotal (Gs.):</strong> <span id="subtotal">0.00</span></p>
+                <p><strong>IVA (10%) (Gs.):</strong> <span id="tax">0.00</span></p>
+                <p><strong>Total General (Gs.):</strong> <span id="total">0.00</span></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>¡Gracias por tu pedido en La Pizza Feliz! ¡Que disfrutes!</p>
+        </footer>
+    </div>
+    <div class="print-button-container">
+        <button id="print-invoice">Imprimir Pedido / Generar PDF</button>
+        <button id="share-whatsapp">Compartir por WhatsApp</button> </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
